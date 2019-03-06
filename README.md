@@ -1,13 +1,14 @@
 ## frp-docker
 
-dockerize frp
+dockerize frp  
 refre to https://github.com/fatedier/frp
 
-persist volume is /conf 
+persist volume  
+/conf 
 
 ## how to use 
 
-default is start a server
+default action is starting a server
 ### server
 ```
 cat > frps.ini << EOF
@@ -15,7 +16,8 @@ cat > frps.ini << EOF
 bind_port = 7000
 vhost_http_port = 7001
 EOF
-docker run -d -p 7000:7000 -p 7001:7001 -v $(pwd)/frps.ini:/conf/frps.ini frp
+
+docker run -d -p 7000:7000 -p 7001:7001 -v $(pwd)/frps.ini:/conf/frps.ini amanohikaru/frp-docker
 ```
 ### client
 ```
@@ -29,7 +31,8 @@ type = http
 local_port = 4000
 custom_domains = amano.com
 EOF
-docker run --network host -d -v $(pwd)/frpc.ini:/conf/frpc.ini frp client
+
+docker run --network host -d -v $(pwd)/frpc.ini:/conf/frpc.ini amanohikaru/frp-docker client
 ```
 
 ## Version
