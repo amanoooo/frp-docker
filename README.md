@@ -38,3 +38,4 @@ docker run --network host -d -v $(pwd)/frpc.ini:/conf/frpc.ini amanohikaru/frp-d
 ## Version
 
 - 0.24.0
+- 0.24.1
