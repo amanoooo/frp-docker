@@ -11,6 +11,8 @@ persist volume
 default action is starting a server
 ### server
 ```
+# frps.ini
+
 cat > frps.ini << EOF
 [common]
 bind_port = 7000
@@ -22,6 +24,8 @@ docker run -d -p 7000:7000 -p 7001:7001 -v $(pwd)/frps.ini:/conf/frps.ini amanoh
 ### client
 ```
 cat > frpc.ini << EOF
+# frpc.ini
+
 [common]
 server_addr = 218.168.168.59
 server_port = 7000
